@@ -67,11 +67,11 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-'''
+
 @app.route('/GCD',methods=['GET'])
 def GCD():
     return render_template("GCD.html")
-
+'''
 @app.route('/GCD',methods=['POST'])
 def predict():
     global image_path
@@ -93,11 +93,11 @@ def predict():
         score_a =f"{score_r*100/75*100:.2f}%"
     classification = {"predict":PictureExt,"score":score_a}
     return render_template("GCD.html", prediction=classification,image_path=image_path)
-
+'''
 @app.route('/CV',methods=['GET'])
 def CV():
     return render_template("CV.html")
-
+'''
 
 @app.route('/CV',methods=['POST'])
 def predict2(): 
