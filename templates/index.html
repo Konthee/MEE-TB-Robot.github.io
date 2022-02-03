@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+
+
+<div class="container" style="height:750px; width:100%; display:inline-block; background-color:#ffffff;">
+    
+    <div class="text-center">
+         
+        <!--<h1>Welcome to MEE Team</h1>
+        <div class="container">
+        
+        <img src="../static/vistec mee_logo full color.png" alt="" width="600" height="450" > 
+        -->
+        <div class="text-center">
+            <h1>Welcome to T.B. Robot</h1>
+            
+            <h1 style="color:rgb(56, 23, 243)" class="text-center">Advance in Classification Battery/Psudocapacitor online </h1>
+        </div>
+    </div>
+    
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <div class ="container">
+            <h5></h5>
+            <span><h5 style="color:#5B9BD5; text-align:justify" >
+                This website was established by the group of electrochemists and physicists from the Team of Molecular Electrochemistry for Energy (MEE) as well as the collaboration with Information Science and Technology(IST) engineers in Vidyasirimedhi Institute of Science & Technology (VISTEC), Thailand. The objective is to provide an interactive channel for data classification especially for electrochemistry field to classify the behaviors of materials used in energy storage research between battery and pseudocapacitor types. 
+                </span></h5>
+    
+                <p ><h5 style="color:#5B9BD5;text-align:justify">
+                 Our model is based on a well established pseudocapacitance theory proposed by <b>B. E. Conway </b>as well as machine learning (ML) using Python language. By simply using  cyclic voltammogram (CV) or Galvano- static Charge-Discharge (GCD) curves, the user can determine the tendency of the material to behave as battery or pseudocapacitor by the percentage of pseudocapacitance. 
+        </div>
+        </div>
+        
+        <div class="col-md-3 order-md-1" style="height:120px; width:18%; display:inline-block; background-color:#a19b9b98;">
+            <h4 style="color:#ffffff"><b>Clasification</b></h4>
+            <ul  type="circle"> 
+            <li><a class="dropdown-item" href="{{url_for('GCD')}}"><b><h5 style="color:#ffffff"> GCD</h5></b></a></li>
+            <li><a class="dropdown-item" href="{{url_for('CV')}}"><b><h5 style="color:#ffffff">CV</h5></b></a></li>
+            </ul>
+            
+        
+        </div>
+      </div>
+
+
+
+    
+    
+    
+</div>
+
+{% endblock%}

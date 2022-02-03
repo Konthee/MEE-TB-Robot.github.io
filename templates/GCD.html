@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+<div  style="height:1000px; width:100%; display:inline-block; background-color:#ffffff;">
+    
+
+    <div class="container">
+        <h1>Clasification</h1>
+    <h1 class="text-center">GCD Classifier</h1>
+    
+    {% if image_path %}
+    
+    <ul class="text-center" ><img src="{{image_path}}" alt="" width="400" height="300"></ul>
+    {% else %}
+
+    <ul class="text-center" ><img src="../static/GCD insert.png" alt="" width="400" height="300"></ul>
+    {% endif %}
+    
+    
+    <form class="p-3 text-center" action="/GCD", method="post" enctype="multipart/form-data">
+        <input class="form-control" type="file" name="imagefile_GCD">
+        <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+
+    
+
+    <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">
+            
+            {% if prediction %}
+            <hr class="featurette-divider">
+            <p class="text-center" > This image is a {{prediction.predict}} </p>
+            <span class="text-muted">I'm confident ({{prediction.score}}) </span>
+            <hr class="featurette-divider">
+            {% else %}
+            <hr class="featurette-divider">
+            <p class="text-center" > Insert your photo </p>
+            <span class="text-muted">T.B. Robot </span>
+            <hr class="featurette-divider">
+            {% endif %} 
+            
+            
+        </div>
+
+        {% if prediction %}
+            {% if prediction.predict == "Pseudocapacitor" %}
+            <div class="col-md-5">
+                <img src="../static/T.B._pseudo.png"  alt=""  class="address" width="326" height="502" >
+  
+            </div>
+            {% else %}
+            <div class="col-md-5">
+                <img src="../static/T.B._Bat.png"  alt=""  class="address" width="326" height="502" >
+  
+            </div>
+        
+            {% endif %}
+        {% else %}
+            <div class="col-md-5">
+                <img src="../static/T.B._think.png"  alt=""  class="address" width="326" height="502" >
+  
+            </div>
+        {% endif %} 
+        
+
+ 
+
+    
+        </form>
+    </div>
+
+</div>
+{% endblock%}
