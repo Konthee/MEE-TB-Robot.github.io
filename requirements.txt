@@ -1,4 +1,4 @@
 Flask==2.0.2
 numpy==1.19.5
-TensorFlowTTS
+tensorflow-cpu==2.6.0
 gunicorn==20.1.0
