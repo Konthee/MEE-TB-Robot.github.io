@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.models import model_from_json
 from tensorflow import keras
 from tensorflow.keras.models import Sequential
-'''
+
 
 
 img_height = 224
@@ -41,6 +41,7 @@ for model in K :
             loaded_model_json = f.read()
             predict_model_2 = model_from_json(loaded_model_json)
             predict_model_2.load_weights(filepath_weights)
+    '''
     elif m==3 :
         predict_model_3 = load_model(filepath)
         with open(filepath_model, 'r') as f:
@@ -72,7 +73,7 @@ def index():
 @app.route('/GCD',methods=['GET'])
 def GCD():
     return render_template("GCD.html")
-'''
+
 @app.route('/GCD',methods=['POST'])
 def predict():
     global image_path
@@ -94,7 +95,7 @@ def predict():
         score_a =f"{score_r*100/75*100:.2f}%"
     classification = {"predict":PictureExt,"score":score_a}
     return render_template("GCD.html", prediction=classification,image_path=image_path)
-'''
+
 @app.route('/CV',methods=['GET'])
 def CV():
     return render_template("CV.html")
