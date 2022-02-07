@@ -30,13 +30,13 @@ m=1
 for model in K :
     m+=1
     Model =model
-    filepath=f'model1_ResNet50.h5'
+    #filepath=f'model1_ResNet50.h5'
     filepath_model = f'model1_ResNet50.json'
     filepath_weights = f'weights_model_{Model}.h5'
     #Load
 
     if m ==2 :
-        predict_model_2 = load_model(filepath)
+        #predict_model_2 = load_model(filepath)
         with open(filepath_model, 'r') as f:
             loaded_model_json = f.read()
             predict_model_2 = model_from_json(loaded_model_json)
