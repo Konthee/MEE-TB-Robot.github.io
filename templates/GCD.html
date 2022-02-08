@@ -1,81 +1,122 @@
-{% extends "layout.html" %}
-
-{% block content%}
-
-<div  style="height:1000px; width:100%; display:inline-block; background-color:#ffffff;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEE-T.B. Robot </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body >
     
+    <nav class="navbar  navbar-expand-lg navbar-light" style="height:80px; width:100%; background-color: #c2f1faef; "  >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="../static/MEE logo blue.png" alt="" class="address" width="170" height="50"></a>
+          <a class="nav-link active" href="/"><b style="color:rgb(24, 180, 252)"><h7>HOME</b></h7></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
 
-    <div class="container">
-    <h2 style="color:rgb(255, 255, 255) ">Clasification</h2>
-    <h1 class="text-center">GCD Classifier</h1>
-    
-    {% if image_path %}
-    
-    <ul class="text-center" ><img src="{{image_path}}" alt="" width="400" height="300"></ul>
-    {% else %}
+             
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <h7><b style="color:rgb(19, 218, 253)">CLASSIFICATION</b></h7>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{url_for('profile')}}"><b style="color:rgb(0, 0, 0)">CNN</b></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{url_for('GCD')}}"><h7>GCD</h7></a></li>
+                <li><a class="dropdown-item" href="{{url_for('CV')}}"><h7>CV</h7></a></li>
+              
+                <!--
 
-    <ul class="text-center" ><img src="../static/GCD insert.png" alt="" width="400" height="300"></ul>
-    {% endif %}
-    
-    
-    <form class="p-3 text-center" action="/GCD", method="post" enctype="multipart/form-data">
-        <input class="form-control" type="file" name="imagefile_GCD">
-        <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+                  <li><a class="dropdown-item" href="{{url_for('profile')}}"><b style="color:rgb(0, 0, 0)">CNN</b></a></li>
+                  <li><a class="dropdown-item" href="{{url_for('GCD')}}"><h7>GCD</h7></a></li>
+                <li><a class="dropdown-item" href="{{url_for('CV')}}"><h7>CV</h7></a></li>
+                  --> 
+                
+              </ul>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('about')}}"><h7><b style="color:rgb(19, 218, 253)">ABOUT US</b></h7></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('Contact')}}"><h7><b style="color:rgb(19, 218, 253)">CONTACT US</b></h7></a>
+              </li>
 
-    
+              
 
-    <div class="row featurette">
-        <div class="col-md-7">
-            
-          <h2 class="featurette-heading">
-            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
-            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
-            {% if prediction %}
-            <hr class="featurette-divider">
-            <p class="text-center" > This image is a {{prediction.predict}} </p>
-            <span class="text-muted">I'm confident ({{prediction.score}}) </span>
-            <hr class="featurette-divider">
-            {% else %}
-            <!--
-            <hr class="featurette-divider">
-            <p class="text-center" > Insert your photo </p>
-            <span class="text-muted">T.B. Robot </span>
-            <hr class="featurette-divider">
-            -->
-            {% endif %} 
-            
-            
+               <!--  
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('profile')}}"><b style="color:rgb(252, 248, 248)">ADMIN</b></a>
+                -->
+              
+                
+              
+            </ul>
+          </div>
         </div>
-
-        {% if prediction %}
-            {% if prediction.predict == "Pseudocapacitor" %}
-            <div class="col-md-5">
-                <img src="../static/T.B._pseudo.png"  alt=""  class="address" width="326" height="502" >
-  
-            </div>
-            {% else %}
-            <div class="col-md-5">
-                <img src="../static/T.B._Bat.png"  alt=""  class="address" width="326" height="502" >
-  
-            </div>
         
-            {% endif %}
-        {% else %}
-        
-            <!--
-            <div class="col-md-5">
-                <img src="../static/T.B._think.png"  alt=""  class="address" width="326" height="502" >
-  
-            </div>
-            -->
-        {% endif %} 
-        
-
- 
-
-    
-        </form>
+      </nav>
+      
+      <main>
+          {% block content%}
+          
+          {% endblock%}
+      </main>
+      
+</body>
+<div class="web-footer" style="height:210px; width:100%; display:inline-block; background-color:#555353;" >
+  <div class="wrapper">
+    <div class="row">
+      <div class=" col-5 col col" >
+        <div class="category-title contact">
+          <div class="line">
+           <h2 style="color:rgb(252, 248, 248)">-Contact Us-</h2>
+          <span class="icon-contact">
+            <div>
+            <h6 style="color:rgb(252, 248, 248)"> <img src="../static/house-fill.svg" alt="" class="address" width="30" height="30"> <b><span>Molecular Electrochemistry for Energy</span></b></h6>
+            <h6 style="color:rgb(252, 248, 248)"> <img src="../static/building.svg" alt="" class="address" width="30" height="30"> <b>Vidyasirimedhi Institute of Science and Technology (VISTEC)</b></h6>
+            <h6 style="color:rgb(252, 248, 248)"> <img src="../static/geo-alt-fill.svg" alt="" class="address" width="30" height="30"> <span>Wangchan Valley 555 Moo 1 Payupnai, Wangchan, Rayong 21210 Thailand</span></h6>
+            <h6 style="color:rgb(252, 248, 248)"> <span class="newline"></span> <img src="../static/envelope-exclamation-fill.svg" alt="" width="30" height="30"> <span><a href="mailto:olivier.fontaine@vistec.ac.th"> contact@vistec.ac.th</a></h6></span>
+           </div>
+          </div>
+        </div>
+      </div><!-- End .col -->
+      <div class="col">
+        <div class="category-title">
+          <p><b> <b style="color:#555353;">Molecular </b></b></p>
+          <p><img src="../static/Logo_vistec.png" alt="" class="address" width="200" height="100"> </p> 
+          
+        </div> 
+      </div>
+      <div class="col">
+        <div class="category-title">
+          <p><b> <b style="color:#555353;">Molecular </b></b></p>
+          <p><img src="../static/logo_PTT.png" alt="" class="address" width="200" height="100"> </p>
+        </div> 
+      </div>
+      <div class="col">
+        <div class="category-title">
+          <p><b> <b style="color:#555353;">Molecular </b></b></p> 
+            <p><img src="../static/MEE logo gray.png" alt="" class="address" width="270" height="80"> </p> 
+            
+        </div> 
+      </div>
+    </div>
+    </div><!-- End .col -->
+      <span class="newline"></span>
+      <div class="frm-area">       
+      <span class="area_newsletter_form">      
+      </span>
     </div>
 
+  <div class="bottom-area" style="height:40px; width:100%; display:inline-block; background-color:#000000;" >
+    <p style="color:rgb(252, 248, 248)" class="text-center">COPYRIGHT 2022 Ⓒ Konthee Boonmeeprakob</p>
+  </div>
 </div>
-{% endblock%}
+</html>
