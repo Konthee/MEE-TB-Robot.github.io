@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content%}
+    
+    <div class="container"> 
+    <div class="col col-right">
+        <div class="category-title">
+            <div class="container" style="height:750px; width:100%; display:inline-block; background-color:#ffffff;">
+                <div class="text-center">
+                <h2><b> Convolutional Neural Network</h2></b>
+                <p><img src="../static/8-layer CNN.png" alt="" class="address" width="1200" height="400"> </p>    
+            </div> 
+            <dl>
+            <h5 style="color:#070707; text-align:justify"> <B style="color:rgb(0, 0, 0)" >Convolutional Neural Network (CNN)</B> has proven to be the state-of-the-art method to extract a great deal of features from images. 
+            Based on convolution operation in multiple dimension space, convolution layer extracts feature from an image according to the filter kernel, 
+            creating stacks of feature maps that will be passed to another classifier model. CNNs on the shallow depth detects simple features and 
+            sequentially detects more complex features as deeper the network goes. The implementation of CNNs has various backbone architectures that differ 
+            in performance, depth, and number of parameters. We use keras preprocessing layers embedded to the model architecture. The preprocessing we use in
+            this project are normalization layer (to convert pixel value from 0 – 255 to 0 – 1) and data augmentation layer.
+            </h5>
+            </dl>
+          </div>
+          
+            
+        
+    </div>
+    </div>
+</div>
+
+{% endblock%}
+
+
+    
