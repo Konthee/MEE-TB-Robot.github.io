@@ -147,17 +147,14 @@ def predict2():
 
 
 
+
+@app.route('/CNN')
+def CNN():
+    return render_template("CNN.html")
+
 @app.route('/about')
 def about():
-    products = ["เสื้อผ้า","เตารีด","ผ้าห่ม"]
-    return render_template("about.html",myproduct=products)
-
-@app.route('/admin')
-def profile():
-    #name age
-    username = "Konthee"
-    age = 26
-    return render_template("admin.html",username=username,myage=age)
+    return render_template("about.html")
 
 @app.route('/sendData')
 def signupForm():
