@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <h1>Clasification</h1>
+    <h2 style="color:rgb(255, 255, 255) ">Clasification</h2>
     <h1 class="text-center">CV Classifier</h1>
 
     
@@ -29,17 +29,21 @@
     <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">
-            
+            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
+            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
             {% if prediction2 %}
+            <span></span>
             <hr class="featurette-divider">
-            <p class="text-center" > This image is a {{prediction2.predict}} </p>
+            <p class="text-center" > This image is a <a style="color:rgba(23, 217, 243, 0.822) ">{{prediction2.predict}} </a></p>
             <span class="text-muted">%Psudocapacitance is {{prediction2.psedo}} </span>
             <hr class="featurette-divider">
             {% else %}
+            <!--
             <hr class="featurette-divider">
             <p class="text-center" > Insert your photo </p>
             <span class="text-muted">T.B. Robot </span>
             <hr class="featurette-divider">
+            -->   
             {% endif %} 
             
         </div>
@@ -58,11 +62,12 @@
         
             {% endif %}
         {% else %}
+        <!--
         <div class="col-md-5">
         <ul class="text-center" ><img src="../static/T.B._think.png" width="326" height="502"></ul>
 
         </div>
-
+        -->   
         {% endif %} 
         
 
