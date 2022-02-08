@@ -6,7 +6,7 @@
     
 
     <div class="container">
-        <h1>Clasification</h1>
+    <h2 style="color:rgb(255, 255, 255) ">Clasification</h2>
     <h1 class="text-center">GCD Classifier</h1>
     
     {% if image_path %}
@@ -26,18 +26,22 @@
 
     <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">
             
+          <h2 class="featurette-heading">
+            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
+            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
             {% if prediction %}
             <hr class="featurette-divider">
             <p class="text-center" > This image is a {{prediction.predict}} </p>
             <span class="text-muted">I'm confident ({{prediction.score}}) </span>
             <hr class="featurette-divider">
             {% else %}
+            <!--
             <hr class="featurette-divider">
             <p class="text-center" > Insert your photo </p>
             <span class="text-muted">T.B. Robot </span>
             <hr class="featurette-divider">
+            -->
             {% endif %} 
             
             
@@ -57,10 +61,13 @@
         
             {% endif %}
         {% else %}
+        
+            <!--
             <div class="col-md-5">
                 <img src="../static/T.B._think.png"  alt=""  class="address" width="326" height="502" >
   
             </div>
+            -->
         {% endif %} 
         
 
