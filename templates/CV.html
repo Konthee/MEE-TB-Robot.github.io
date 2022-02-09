@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <h2 style="color:rgb(255, 255, 255) ">Clasification</h2>
+    <br>
     <h1 class="text-center">CV Classifier</h1>
 
     
@@ -29,16 +29,18 @@
     <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">
-            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
-            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
+            <br><br>
             {% if prediction2 %}
             <span></span>
             <hr class="featurette-divider">
-            <p class="text-center" > This image is a <a style="color:rgba(23, 217, 243, 0.822) ">{{prediction2.predict}} </a></p>
-            <span class="text-muted">%Psudocapacitance is {{prediction2.psedo}} </span>
+            <p class="text-center" > The Robot predicts that this CV is <a style="color:rgba(23, 217, 243, 0.822) ">{{prediction2.predict}} </a></p>
+            <span class="text-muted">%Pseudo is {{prediction2.psedo}} </span>
             <hr class="featurette-divider">
+            <br>
+            <h6>The prediction was performed based on binary classification between pseudocapacitor vs battery with % confidence. 
+                Then, % pseudo was determined by using % confidence coupled with the probability between CV types.</h6>
             {% else %}
-            <!--
+            <!--    
             <hr class="featurette-divider">
             <p class="text-center" > Insert your photo </p>
             <span class="text-muted">T.B. Robot </span>

@@ -6,7 +6,7 @@
     
 
     <div class="container">
-    <h2 style="color:rgb(255, 255, 255) ">Clasification</h2>
+        <br>
     <h1 class="text-center">GCD Classifier</h1>
     
     {% if image_path %}
@@ -28,13 +28,14 @@
         <div class="col-md-7">
             
           <h2 class="featurette-heading">
-            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
-            <a style="color:rgb(255, 255, 255) ">.............................................................................................</a>
+            <br><br>
             {% if prediction %}
             <hr class="featurette-divider">
-            <p class="text-center" > This image is a {{prediction.predict}} </p>
-            <span class="text-muted">I'm confident ({{prediction.score}}) </span>
+            <p class="text-center" > The Robot predicts that this GCD is <a style="color:rgba(23, 217, 243, 0.822) ">{{prediction.predict}}  type</a></p>
+            <span class="text-muted">with {{prediction.score}}% confidence. </span>
             <hr class="featurette-divider">
+            <br>
+            <h6>The prediction was performed based on binary classification between pseudocapacitor vs battery.</h6>
             {% else %}
             <!--
             <hr class="featurette-divider">
