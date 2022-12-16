@@ -12,7 +12,7 @@ Convolutional Neural Networks (CNNs) are a type of neural network specifically d
 
 The output of the convolutional layer is then passed through a series of additional layers, which further process and analyze the data. These may include pooling layers, which downsample the data to reduce its complexity, and fully connected layers, which apply weights to the data to make predictions.
 
-CNNs are particularly effective at image recognition tasks because they are able to automatically learn and extract the most important features from the input data. They have been used to achieve state-of-the-art results in a wide range of image recognition tasks, including object detection, image classification, and image segmentation.
+CNNs are particularly effective at image recognition tasks because they are able to automatically learn and extract the most important features from the input data. They have been used to achieve state-of-the-art results in a wide range of image classification
 
 ![image](https://user-images.githubusercontent.com/98932144/208107263-3a79ef1c-d344-4240-845b-25ea27acdd2b.png)
 
